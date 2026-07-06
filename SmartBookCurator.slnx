@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BookCurator.Data/BookCurator.Data.csproj" />
+  <Project Path="BookCurator.MVC/BookCurator.MVC.csproj" />
+</Solution>
