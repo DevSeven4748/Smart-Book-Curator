@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookCurator.Data\BookCurator.Data.csproj" />
+    <ProjectReference Include="..\BookCurator.BLL\BookCurator.BLL.csproj" />
+    <ProjectReference Include="..\BookCurator.Data\BookCurator.DAL.csproj" />
   </ItemGroup>
 
 </Project>

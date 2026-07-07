@@ -1,10 +1,10 @@
-﻿using BookCurator.Data.Entities;
+﻿using BookCurator.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookCurator.Data
+namespace BookCurator.DAL
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {

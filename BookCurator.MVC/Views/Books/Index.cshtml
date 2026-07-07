@@ -1,0 +1,52 @@
+﻿@using BookCurator.DAL.Entities
+@model IEnumerable<Book>
+
+@{
+    ViewData["Title"] = "My Books";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Book List</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Add New Book
+    </a>
+</div>
+
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Status</th>
+            <th>Rating</th>
+            <th class="text-end">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><strong>@book.Title</strong></td>
+                <td>@book.Author</td>
+                <td>@book.Genre</td>
+                <td>
+                    @{
+                        var badgeClass = book.Status switch
+                        {
+                            BookCurator.DAL.Entities.BookStatus.Finished => "bg-success",
+                            BookCurator.DAL.Entities.BookStatus.Reading => "bg-warning text-dark",
+                            _ => "bg-secondary"
+                        };
+                    }
+                    <span class="badge @badgeClass">@book.Status.ToString()</span>
+                </td>
+                <td>@(book.Rating?.ToString() ?? "-") / 5</td>
+                <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-sm btn-outline-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

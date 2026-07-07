@@ -1,4 +1,4 @@
-﻿namespace BookCurator.Data.Entities
+﻿namespace BookCurator.DAL.Entities
 {
     public class Book
     {

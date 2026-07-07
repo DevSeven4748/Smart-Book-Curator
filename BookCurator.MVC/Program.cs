@@ -1,13 +1,9 @@
 using BookCurator.Data;
 using Microsoft.EntityFrameworkCore;
+using BookCurator.MVC;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+builder.Services.AddMVCServices(builder.Configuration);
 
 var app = builder.Build();
 

@@ -1,0 +1,43 @@
+﻿@model BookCurator.MVC.Models.ViewModels.BookCreateViewModel
+
+@{
+    ViewData["Title"] = "Add New Book";
+}
+
+<h2>Add New Book</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Book Title</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Author" class="form-label">Author</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Genre" class="form-label">Genre</label>
+                <input asp-for="Genre" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label">Status</label>
+                <select asp-for="Status" class="form-select"
+                        asp-items="Html.GetEnumSelectList<BookCurator.DAL.Entities.BookStatus>()">
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Rating" class="form-label">Rating (1-5)</label>
+                <input asp-for="Rating" type="number" min="1" max="5" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
