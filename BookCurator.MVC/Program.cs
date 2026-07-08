@@ -1,11 +1,18 @@
-using BookCurator.Data;
 using Microsoft.EntityFrameworkCore;
 using BookCurator.MVC;
+using BookCurator.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMVCServices(builder.Configuration);
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    context.Database.Migrate();
+    SeedData.Initialize(context);
+}
 
 
 if (!app.Environment.IsDevelopment())

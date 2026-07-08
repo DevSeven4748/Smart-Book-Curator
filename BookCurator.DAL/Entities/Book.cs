@@ -9,8 +9,9 @@
         public BookStatus Status { get; set; }
         public int? Rating { get; set; }
         public string? Notes { get; set; }
-        public DateTime DateAdded { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime DateAdded { get; set; }
+        public DateTime? DateFinished { get; set; }
 
     }
 
