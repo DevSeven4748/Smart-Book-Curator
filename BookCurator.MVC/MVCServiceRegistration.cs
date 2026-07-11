@@ -1,4 +1,5 @@
-﻿using BookCurator.BLL.Services.Abstract;
+﻿using BookCurator.BLL.Options;
+using BookCurator.BLL.Services.Abstract;
 using BookCurator.BLL.Services.Concrete;
 using BookCurator.DAL;
 using BookCurator.DAL.Repositories.Abstract;
@@ -19,6 +20,9 @@ namespace BookCurator.MVC
 
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookService, BookService>();
+
+            services.Configure<GeminiOptions>(configuration.GetSection("Gemini"));
+            services.AddHttpClient<IRecommendationService, GeminiRecommendationService>();
 
             return services;
         }
