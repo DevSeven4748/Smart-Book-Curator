@@ -1,6 +1,7 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+using BookCurator.BLL.Services.Abstract;
 using BookCurator.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BookCurator.Controllers;
 
@@ -21,4 +22,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
 }
