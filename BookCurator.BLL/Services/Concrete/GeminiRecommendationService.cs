@@ -1,16 +1,14 @@
-﻿using BookCurator.BLL.Options;
+﻿using BookCurator.BLL.DTOs;
+using BookCurator.BLL.Options;
 using BookCurator.BLL.Services.Abstract;
 using BookCurator.DAL.Entities;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using BookCurator.DAL.Entities;
+using System.Net;
 using System.Net.Http;
-using BookCurator.BLL.DTOs;
-using BookCurator.BLL.Options;
-using Microsoft.Extensions.Options;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace BookCurator.BLL.Services.Concrete
 {
@@ -48,15 +46,15 @@ namespace BookCurator.BLL.Services.Concrete
                     return text ?? "No recommendation was returned.";
                 }
 
-                if ((int)httpResponse.StatusCode == 503 && attempt < maxAttempts) //why cast the statuscode to int ?
+                if (httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable && attempt < maxAttempts)
                 {
                     await Task.Delay(1000 * attempt); // simple backoff: 1s, then 2s
                     continue;
                 }
 
-                return $"Recommendation service is temporarily unavailable ({(int)httpResponse.StatusCode}). Please try again shortly.";
+                return $"Recommendation service is temporarily unavailable ({(int)httpResponse.StatusCode}). Please try again shortly."; //return error for each attempt
             }
-            return "Recommendation service is temporarily unavailable. Please try again shortly.";
+            return "Recommendation service is temporarily unavailable. Please try again shortly."; //return error message for the entire process
         }
 
         private static string BuildPrompt(IEnumerable<Book> books, string? mood)
