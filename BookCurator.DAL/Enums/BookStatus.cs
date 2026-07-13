@@ -1,6 +1,10 @@
-﻿public enum BookStatus
+﻿namespace BookCurator.DAL.Entities
 {
-    ToRead,
-    Reading,
-    Finished
+    public enum BookStatus
+    {
+        ToRead,
+        Reading,
+        Finished
+    }
 }
+
