@@ -19,7 +19,12 @@ namespace BookCurator.MVC
             });
 
             services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<ITvShowRepository, TvShowRepository>();
+
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<ITvShowService, TvShowService>();
 
             services.Configure<GeminiOptions>(configuration.GetSection("Gemini"));
             services.AddHttpClient<IRecommendationService, GeminiRecommendationService>();
