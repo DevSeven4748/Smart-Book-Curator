@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BookCurator.DAL.Entities.Movie>
+
+<h2>My Movies</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">+ Add Movie</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Title</th><th>Director</th><th>Genre</th><th>Status</th><th>Rating</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Director</td>
+                <td>@movie.Genre</td>
+                <td>
+                    @{
+                        var badgeClass = movie.Status switch
+                        {
+                            BookCurator.DAL.Entities.WatchStatus.Finished => "bg-success",
+                            BookCurator.DAL.Entities.WatchStatus.Watching => "bg-warning text-dark",
+                            _ => "bg-secondary"
+                        };
+                    }
+                    <span class="badge @badgeClass">@movie.Status</span>
+                </td>
+                <td>@(movie.Rating?.ToString() ?? "-")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
