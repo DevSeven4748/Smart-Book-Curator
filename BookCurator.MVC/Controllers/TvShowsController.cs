@@ -18,7 +18,7 @@ namespace BookCurator.MVC.Controllers
         // GET: /TvShows/Create
         public async Task<IActionResult> Create()
         {
-            return View();
+            return View(new TvShowCreateViewModel());
         }
 
         // POST: /TvShows/Create

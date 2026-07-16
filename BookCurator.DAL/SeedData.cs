@@ -233,7 +233,338 @@ namespace BookCurator.DAL
                 }
             };
 
+            if (context.Movies.Any())
+                return;
+
+            var movies = new List<Movie>
+            {
+                new Movie
+                {
+                    Title = "The Shawshank Redemption",
+                    Director = "Frank Darabont",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "An absolute masterpiece. Incredible ending.",
+                    DateAdded = DateTime.Now.AddMonths(-5),
+                    DateFinished = DateTime.Now.AddMonths(-5)
+                },
+                new Movie
+                {
+                    Title = "Inception",
+                    Director = "Christopher Nolan",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Mind-bending concept, great score by Hans Zimmer.",
+                    DateAdded = DateTime.Now.AddMonths(-4),
+                    DateFinished = DateTime.Now.AddMonths(-4)
+                },
+                new Movie
+                {
+                    Title = "The Godfather",
+                    Director = "Francis Ford Coppola",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Classic cinema at its finest.",
+                    DateAdded = DateTime.Now.AddMonths(-6),
+                    DateFinished = DateTime.Now.AddMonths(-6)
+                },
+                new Movie
+                {
+                    Title = "Pulp Fiction",
+                    Director = "Quentin Tarantino",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Iconic dialogues and non-linear storytelling.",
+                    DateAdded = DateTime.Now.AddMonths(-3),
+                    DateFinished = DateTime.Now.AddMonths(-3)
+                },
+                new Movie
+                {
+                    Title = "The Dark Knight",
+                    Director = "Christopher Nolan",
+                    Genre = "Action",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Heath Ledger's performance as Joker is unmatched.",
+                    DateAdded = DateTime.Now.AddMonths(-2),
+                    DateFinished = DateTime.Now.AddMonths(-2)
+                },
+                new Movie
+                {
+                    Title = "Interstellar",
+                    Director = "Christopher Nolan",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Visually stunning and emotionally heavy.",
+                    DateAdded = DateTime.Now.AddMonths(-7),
+                    DateFinished = DateTime.Now.AddMonths(-7)
+                },
+                new Movie
+                {
+                    Title = "Fight Club",
+                    Director = "David Fincher",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Great plot twist, very philosophical.",
+                    DateAdded = DateTime.Now.AddMonths(-1),
+                    DateFinished = DateTime.Now.AddDays(-15)
+                },
+                new Movie
+                {
+                    Title = "The Matrix",
+                    Director = "Lana Wachowski",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Revolutionary for its time.",
+                    DateAdded = DateTime.Now.AddMonths(-8),
+                    DateFinished = DateTime.Now.AddMonths(-8)
+                },
+                new Movie
+                {
+                    Title = "Goodfellas",
+                    Director = "Martin Scorsese",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "One of the best mob movies ever made.",
+                    DateAdded = DateTime.Now.AddMonths(-2),
+                    DateFinished = DateTime.Now.AddMonths(-2)
+                },
+                new Movie
+                {
+                    Title = "Se7en",
+                    Director = "David Fincher",
+                    Genre = "Thriller",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "What's in the box?! Devastating ending.",
+                    DateAdded = DateTime.Now.AddMonths(-3),
+                    DateFinished = DateTime.Now.AddMonths(-3)
+                },
+                new Movie
+                {
+                    Title = "Whiplash",
+                    Director = "Damien Chazelle",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "The tension in this movie is insane. Not quite my tempo.",
+                    DateAdded = DateTime.Now.AddMonths(-4),
+                    DateFinished = DateTime.Now.AddMonths(-4)
+                },
+                new Movie
+                {
+                    Title = "Spirited Away",
+                    Director = "Hayao Miyazaki",
+                    Genre = "Animation",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Beautifully animated and magical story.",
+                    DateAdded = DateTime.Now.AddMonths(-9),
+                    DateFinished = DateTime.Now.AddMonths(-9)
+                },
+                new Movie
+                {
+                    Title = "Parasite",
+                    Director = "Bong Joon Ho",
+                    Genre = "Thriller",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Deserved every Oscar it won. Great social commentary.",
+                    DateAdded = DateTime.Now.AddMonths(-1),
+                    DateFinished = DateTime.Now.AddDays(-5)
+                },
+                new Movie
+                {
+                    Title = "Gladiator",
+                    Director = "Ridley Scott",
+                    Genre = "Action",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Are you not entertained? Epic historical drama.",
+                    DateAdded = DateTime.Now.AddMonths(-10),
+                    DateFinished = DateTime.Now.AddMonths(-10)
+                },
+                new Movie
+                {
+                    Title = "Forrest Gump",
+                    Director = "Robert Zemeckis",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Life is like a box of chocolates. Heartwarming story.",
+                    DateAdded = DateTime.Now.AddMonths(-11),
+                    DateFinished = DateTime.Now.AddMonths(-11)
+                }
+            };
+
+            if (context.TvShows.Any())
+                return;
+            
+            var tvShows = new List<TvShow>
+            {
+                new TvShow
+                {
+                    Title = "Breaking Bad",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "The best TV series ever created from start to finish.",
+                    DateAdded = DateTime.Now.AddMonths(-12),
+                    DateFinished = DateTime.Now.AddMonths(-10)
+                },
+                new TvShow
+                {
+                    Title = "Game of Thrones",
+                    Genre = "Fantasy",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Amazing first 6 seasons, rushed ending but still a must-watch.",
+                    DateAdded = DateTime.Now.AddMonths(-15),
+                    DateFinished = DateTime.Now.AddMonths(-11)
+                },
+                new TvShow
+                {
+                    Title = "Chernobyl",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Atmospheric, terrifying, and brilliantly acted mini-series.",
+                    DateAdded = DateTime.Now.AddMonths(-3),
+                    DateFinished = DateTime.Now.AddMonths(-3)
+                },
+                new TvShow
+                {
+                    Title = "The Wire",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Incredibly realistic look at city institutions.",
+                    DateAdded = DateTime.Now.AddMonths(-24),
+                    DateFinished = DateTime.Now.AddMonths(-20)
+                },
+                new TvShow
+                {
+                    Title = "Stranger Things",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Great 80s nostalgia and lovable characters.",
+                    DateAdded = DateTime.Now.AddMonths(-6),
+                    DateFinished = DateTime.Now.AddMonths(-5)
+                },
+                new TvShow
+                {
+                    Title = "Friends",
+                    Genre = "Comedy",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Comfort show. Great to put on in the background.",
+                    DateAdded = DateTime.Now.AddMonths(-18),
+                    DateFinished = DateTime.Now.AddMonths(-12)
+                },
+                new TvShow
+                {
+                    Title = "The Office",
+                    Genre = "Comedy",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Michael Scott is legendary. Funniest mockumentary.",
+                    DateAdded = DateTime.Now.AddMonths(-8),
+                    DateFinished = DateTime.Now.AddMonths(-6)
+                },
+                new TvShow
+                {
+                    Title = "Better Call Saul",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "A masterpiece spin-off that lives up to Breaking Bad.",
+                    DateAdded = DateTime.Now.AddMonths(-7),
+                    DateFinished = DateTime.Now.AddMonths(-5)
+                },
+                new TvShow
+                {
+                    Title = "True Detective",
+                    Genre = "Thriller",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Season 1 is absolute perfection. Matthew McConaughey shines.",
+                    DateAdded = DateTime.Now.AddMonths(-4),
+                    DateFinished = DateTime.Now.AddMonths(-4)
+                },
+                new TvShow
+                {
+                    Title = "Fargo",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Great anthology series with dark humor.",
+                    DateAdded = DateTime.Now.AddMonths(-5),
+                    DateFinished = DateTime.Now.AddMonths(-4)
+                },
+                new TvShow
+                {
+                    Title = "Succession",
+                    Genre = "Drama",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Incredible writing, acting, and background music.",
+                    DateAdded = DateTime.Now.AddMonths(-9),
+                    DateFinished = DateTime.Now.AddMonths(-8)
+                },
+                new TvShow
+                {
+                    Title = "Dark",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Complex time travel plot that actually makes sense at the end.",
+                    DateAdded = DateTime.Now.AddMonths(-10),
+                    DateFinished = DateTime.Now.AddMonths(-9)
+                },
+                new TvShow
+                {
+                    Title = "Black Mirror",
+                    Genre = "Sci-Fi",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "Dystopian tech anthology. Some episodes are pure art.",
+                    DateAdded = DateTime.Now.AddMonths(-6),
+                    DateFinished = DateTime.Now.AddMonths(-6)
+                },
+                new TvShow
+                {
+                    Title = "Mindhunter",
+                    Genre = "Thriller",
+                    Status = WatchStatus.Finished,
+                    Rating = 5,
+                    Notes = "Fascinating look into the psychology of serial killers.",
+                    DateAdded = DateTime.Now.AddMonths(-3),
+                    DateFinished = DateTime.Now.AddMonths(-3)
+                },
+                new TvShow
+                {
+                    Title = "Peaky Blinders",
+                    Genre = "Crime",
+                    Status = WatchStatus.Finished,
+                    Rating = 4,
+                    Notes = "By order of the Peaky Blinders! Cillian Murphy is great.",
+                    DateAdded = DateTime.Now.AddMonths(-11),
+                    DateFinished = DateTime.Now.AddMonths(-9)
+                }
+            };
+
             context.Books.AddRange(books);
+            context.Movies.AddRange(movies);
+            context.TvShows.AddRange(tvShows);
             context.SaveChanges();
         }
     }
