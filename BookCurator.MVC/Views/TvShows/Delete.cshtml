@@ -1,0 +1,23 @@
+﻿
+@model BookCurator.DAL.Entities.TvShow
+
+@{
+    ViewData["Title"] = "Delete Show";
+}
+
+<h2>Delete Show</h2>
+<p class="text-danger">Are you sure you want to delete this show?</p>
+<hr />
+
+<div class="card col-md-6 border-danger mb-3">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">Genre: @Model.Genre | Status: @Model.Status.ToString()</p>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Index" class="btn btn-link text-secondary">Cancel</a>
+</form>

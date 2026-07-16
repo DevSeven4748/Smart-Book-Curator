@@ -1,1 +1,35 @@
-﻿
+﻿@model IEnumerable<BookCurator.DAL.Entities.TvShow>
+
+<h2>My Shows</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">+ Add Show</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Title</th><th>Genre</th><th>Status</th><th>Rating</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var show in Model)
+        {
+            <tr>
+                <td>@show.Title</td>
+                <td>@show.Genre</td>
+                <td>
+                    @{
+                        var badgeClass = show.Status switch
+                        {
+                            BookCurator.DAL.Entities.WatchStatus.Finished => "bg-success",
+                            BookCurator.DAL.Entities.WatchStatus.Watching => "bg-warning text-dark",
+                            _ => "bg-secondary"
+                        };
+                    }
+                    <span class="badge @badgeClass">@show.Status</span>
+                </td>
+                <td>@(show.Rating?.ToString() ?? "-")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@show.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@show.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
