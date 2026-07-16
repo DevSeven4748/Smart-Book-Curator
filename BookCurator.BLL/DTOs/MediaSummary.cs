@@ -1,4 +1,4 @@
-﻿namespace BookCurator.BLL.Models
+﻿namespace BookCurator.BLL.DTOs
 {
     public class MediaSummary
     {
