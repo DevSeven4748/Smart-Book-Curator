@@ -254,11 +254,11 @@ namespace BookCurator.DAL
                     Title = "Inception",
                     Director = "Christopher Nolan",
                     Genre = "Sci-Fi",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 5,
                     Notes = "Mind-bending concept, great score by Hans Zimmer.",
                     DateAdded = DateTime.Now.AddMonths(-4),
-                    DateFinished = DateTime.Now.AddMonths(-4)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -276,11 +276,11 @@ namespace BookCurator.DAL
                     Title = "Pulp Fiction",
                     Director = "Quentin Tarantino",
                     Genre = "Crime",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "Iconic dialogues and non-linear storytelling.",
                     DateAdded = DateTime.Now.AddMonths(-3),
-                    DateFinished = DateTime.Now.AddMonths(-3)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -298,22 +298,22 @@ namespace BookCurator.DAL
                     Title = "Interstellar",
                     Director = "Christopher Nolan",
                     Genre = "Sci-Fi",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 5,
                     Notes = "Visually stunning and emotionally heavy.",
                     DateAdded = DateTime.Now.AddMonths(-7),
-                    DateFinished = DateTime.Now.AddMonths(-7)
+                    DateFinished = null
                 },
                 new Movie
                 {
                     Title = "Fight Club",
                     Director = "David Fincher",
                     Genre = "Drama",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 4,
                     Notes = "Great plot twist, very philosophical.",
                     DateAdded = DateTime.Now.AddMonths(-1),
-                    DateFinished = DateTime.Now.AddDays(-15)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -331,11 +331,11 @@ namespace BookCurator.DAL
                     Title = "Goodfellas",
                     Director = "Martin Scorsese",
                     Genre = "Crime",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "One of the best mob movies ever made.",
                     DateAdded = DateTime.Now.AddMonths(-2),
-                    DateFinished = DateTime.Now.AddMonths(-2)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -353,11 +353,11 @@ namespace BookCurator.DAL
                     Title = "Whiplash",
                     Director = "Damien Chazelle",
                     Genre = "Drama",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 5,
                     Notes = "The tension in this movie is insane. Not quite my tempo.",
                     DateAdded = DateTime.Now.AddMonths(-4),
-                    DateFinished = DateTime.Now.AddMonths(-4)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -375,11 +375,11 @@ namespace BookCurator.DAL
                     Title = "Parasite",
                     Director = "Bong Joon Ho",
                     Genre = "Thriller",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 5,
                     Notes = "Deserved every Oscar it won. Great social commentary.",
                     DateAdded = DateTime.Now.AddMonths(-1),
-                    DateFinished = DateTime.Now.AddDays(-5)
+                    DateFinished = null
                 },
                 new Movie
                 {
@@ -397,11 +397,11 @@ namespace BookCurator.DAL
                     Title = "Forrest Gump",
                     Director = "Robert Zemeckis",
                     Genre = "Drama",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 5,
                     Notes = "Life is like a box of chocolates. Heartwarming story.",
                     DateAdded = DateTime.Now.AddMonths(-11),
-                    DateFinished = DateTime.Now.AddMonths(-11)
+                    DateFinished = null
                 }
             };
 
@@ -424,11 +424,11 @@ namespace BookCurator.DAL
                 {
                     Title = "Game of Thrones",
                     Genre = "Fantasy",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 4,
                     Notes = "Amazing first 6 seasons, rushed ending but still a must-watch.",
                     DateAdded = DateTime.Now.AddMonths(-15),
-                    DateFinished = DateTime.Now.AddMonths(-11)
+                    DateFinished = null
                 },
                 new TvShow
                 {
@@ -454,21 +454,21 @@ namespace BookCurator.DAL
                 {
                     Title = "Stranger Things",
                     Genre = "Sci-Fi",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 4,
                     Notes = "Great 80s nostalgia and lovable characters.",
                     DateAdded = DateTime.Now.AddMonths(-6),
-                    DateFinished = DateTime.Now.AddMonths(-5)
+                    DateFinished = null
                 },
                 new TvShow
                 {
                     Title = "Friends",
                     Genre = "Comedy",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "Comfort show. Great to put on in the background.",
                     DateAdded = DateTime.Now.AddMonths(-18),
-                    DateFinished = DateTime.Now.AddMonths(-12)
+                    DateFinished = null
                 },
                 new TvShow
                 {
@@ -484,11 +484,11 @@ namespace BookCurator.DAL
                 {
                     Title = "Better Call Saul",
                     Genre = "Crime",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 5,
                     Notes = "A masterpiece spin-off that lives up to Breaking Bad.",
                     DateAdded = DateTime.Now.AddMonths(-7),
-                    DateFinished = DateTime.Now.AddMonths(-5)
+                    DateFinished = null
                 },
                 new TvShow
                 {
@@ -504,11 +504,11 @@ namespace BookCurator.DAL
                 {
                     Title = "Fargo",
                     Genre = "Crime",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "Great anthology series with dark humor.",
                     DateAdded = DateTime.Now.AddMonths(-5),
-                    DateFinished = DateTime.Now.AddMonths(-4)
+                    DateFinished = null
                 },
                 new TvShow
                 {
@@ -524,21 +524,21 @@ namespace BookCurator.DAL
                 {
                     Title = "Dark",
                     Genre = "Sci-Fi",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.Watching,
                     Rating = 5,
                     Notes = "Complex time travel plot that actually makes sense at the end.",
                     DateAdded = DateTime.Now.AddMonths(-10),
-                    DateFinished = DateTime.Now.AddMonths(-9)
+                    DateFinished = null
                 },
                 new TvShow
                 {
                     Title = "Black Mirror",
                     Genre = "Sci-Fi",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "Dystopian tech anthology. Some episodes are pure art.",
                     DateAdded = DateTime.Now.AddMonths(-6),
-                    DateFinished = DateTime.Now.AddMonths(-6)
+                    DateFinished = null
                 },
                 new TvShow
                 {
@@ -554,11 +554,11 @@ namespace BookCurator.DAL
                 {
                     Title = "Peaky Blinders",
                     Genre = "Crime",
-                    Status = WatchStatus.Finished,
+                    Status = WatchStatus.ToWatch,
                     Rating = 4,
                     Notes = "By order of the Peaky Blinders! Cillian Murphy is great.",
                     DateAdded = DateTime.Now.AddMonths(-11),
-                    DateFinished = DateTime.Now.AddMonths(-9)
+                    DateFinished = null
                 }
             };
 

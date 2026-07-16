@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BookCurator.DAL.Entities.TvShow>
+﻿@using BookCurator.DAL.Entities
+@model IEnumerable<TvShow>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2>Show List</h2>
@@ -7,30 +8,36 @@
     </a>
 </div>
 
-<table class="table table-striped">
-    <thead>
-        <tr><th>Title</th><th>Genre</th><th>Status</th><th>Rating</th><th></th></tr>
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Status</th>
+            <th>Rating</th>
+            <th class="text-end">Actions</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var show in Model)
         {
             <tr>
-                <td>@show.Title</td>
+                <td><strong>@show.Title</strong></td>
                 <td>@show.Genre</td>
                 <td>
                     @{
                         var badgeClass = show.Status switch
                         {
-                            BookCurator.DAL.Entities.WatchStatus.Finished => "bg-success",
-                            BookCurator.DAL.Entities.WatchStatus.Watching => "bg-warning text-dark",
+                            WatchStatus.Finished => "bg-success",
+                            WatchStatus.Watching => "bg-warning text-dark",
                             _ => "bg-secondary"
                         };
                     }
-                    <span class="badge @badgeClass">@show.Status</span>
+                    <span class="badge @badgeClass">@show.Status.ToString()</span>
                 </td>
-                <td>@(show.Rating?.ToString() ?? "-")</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@show.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <td>@(show.Rating?.ToString() ?? "-") / 5</td>
+                <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@show.Id" class="btn btn-sm btn-outline-warning">Edit</a>
                     <a asp-action="Delete" asp-route-id="@show.Id" class="btn btn-sm btn-outline-danger">Delete</a>
                 </td>
             </tr>
