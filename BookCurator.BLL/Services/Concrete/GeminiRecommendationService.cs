@@ -16,9 +16,9 @@ namespace BookCurator.BLL.Services.Concrete
     {
         private readonly GeminiOptions _options = options.Value;
 
-        public async Task<string> GetRecommendationAsync(IEnumerable<Book> books, string? mood)
+        public async Task<string> GetRecommendationAsync(IEnumerable<MediaSummary> itemList, string? mood)
         {
-            var prompt = BuildPrompt(books, mood);
+            var prompt = BuildPrompt(itemList, mood);
 
             var request = new GeminiRequest
             {
@@ -57,13 +57,16 @@ namespace BookCurator.BLL.Services.Concrete
             return "Recommendation service is temporarily unavailable. Please try again shortly."; //return error message for the entire process
         }
 
-        private static string BuildPrompt(IEnumerable<Book> books, string? mood)
+        private static string BuildPrompt(IEnumerable<MediaSummary> items, string? mood)
         {
-            var bookList = string.Join(", ", books.Select(b => $"{b.Title} by {b.Author} ({b.Status})"));
-            var moodPart = string.IsNullOrWhiteSpace(mood) ? "" : $"I'm in the mood for something like: {mood}.";
+            var itemList = string.Join(", ", items.Select(i =>
+                $"{i.Title}{(string.IsNullOrEmpty(i.Creator) ? "" : $" by {i.Creator}")} [{i.MediaType}, {i.Genre}, {i.Status}{(i.Rating.HasValue ? $", rated {i.Rating}/5" : "")}]"));
 
-            return $"Based on this reading list: {bookList}.{moodPart} Recommend one book I haven't read yet, in 2-3 sentences, explaining why it fits";
+            var moodPart = string.IsNullOrWhiteSpace(mood) ? "" : $" I'm in the mood for something like: {mood}.";
 
+            return $"Based on this media history (books, movies, and TV shows): {itemList}.{moodPart} " +
+                   $"Recommend one book, movie, or TV show I haven't consumed yet, in 2-3 sentences, " +
+                   $"explaining why it fits my taste across these different media types.";
         }
 
 
