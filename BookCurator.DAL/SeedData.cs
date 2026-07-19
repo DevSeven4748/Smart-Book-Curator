@@ -50,7 +50,7 @@ namespace BookCurator.DAL
                     Author = "Yuval Noah Harari",
                     Genre = "History",
                     Status = BookStatus.ToRead,
-                    Rating = 0,
+                    Rating = null,
                     Notes = "Highly recommended by friends.",
                     DateAdded = DateTime.Now.AddDays(-5),
                     DateFinished = null
@@ -116,7 +116,7 @@ namespace BookCurator.DAL
                     Author = "Matt Haig",
                     Genre = "Fiction",
                     Status = BookStatus.ToRead,
-                    Rating = 0,
+                    Rating = null,
                     Notes = "Interesting premise about parallel lives.",
                     DateAdded = DateTime.Now.AddDays(-2),
                     DateFinished = null
@@ -182,7 +182,7 @@ namespace BookCurator.DAL
                     Author = "Kazuo Ishiguro",
                     Genre = "Dystopian",
                     Status = BookStatus.ToRead,
-                    Rating = 0,
+                    Rating = null,
                     Notes = "AI perspective story, sounds unique.",
                     DateAdded = DateTime.Now.AddDays(-1),
                     DateFinished = null
@@ -277,7 +277,7 @@ namespace BookCurator.DAL
                     Director = "Quentin Tarantino",
                     Genre = "Crime",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "Iconic dialogues and non-linear storytelling.",
                     DateAdded = DateTime.Now.AddMonths(-3),
                     DateFinished = null
@@ -299,7 +299,7 @@ namespace BookCurator.DAL
                     Director = "Christopher Nolan",
                     Genre = "Sci-Fi",
                     Status = WatchStatus.ToWatch,
-                    Rating = 5,
+                    Rating = null,
                     Notes = "Visually stunning and emotionally heavy.",
                     DateAdded = DateTime.Now.AddMonths(-7),
                     DateFinished = null
@@ -332,7 +332,7 @@ namespace BookCurator.DAL
                     Director = "Martin Scorsese",
                     Genre = "Crime",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "One of the best mob movies ever made.",
                     DateAdded = DateTime.Now.AddMonths(-2),
                     DateFinished = null
@@ -376,7 +376,7 @@ namespace BookCurator.DAL
                     Director = "Bong Joon Ho",
                     Genre = "Thriller",
                     Status = WatchStatus.ToWatch,
-                    Rating = 5,
+                    Rating = null,
                     Notes = "Deserved every Oscar it won. Great social commentary.",
                     DateAdded = DateTime.Now.AddMonths(-1),
                     DateFinished = null
@@ -465,7 +465,7 @@ namespace BookCurator.DAL
                     Title = "Friends",
                     Genre = "Comedy",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "Comfort show. Great to put on in the background.",
                     DateAdded = DateTime.Now.AddMonths(-18),
                     DateFinished = null
@@ -505,7 +505,7 @@ namespace BookCurator.DAL
                     Title = "Fargo",
                     Genre = "Crime",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "Great anthology series with dark humor.",
                     DateAdded = DateTime.Now.AddMonths(-5),
                     DateFinished = null
@@ -535,7 +535,7 @@ namespace BookCurator.DAL
                     Title = "Black Mirror",
                     Genre = "Sci-Fi",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "Dystopian tech anthology. Some episodes are pure art.",
                     DateAdded = DateTime.Now.AddMonths(-6),
                     DateFinished = null
@@ -555,7 +555,7 @@ namespace BookCurator.DAL
                     Title = "Peaky Blinders",
                     Genre = "Crime",
                     Status = WatchStatus.ToWatch,
-                    Rating = 4,
+                    Rating = null,
                     Notes = "By order of the Peaky Blinders! Cillian Murphy is great.",
                     DateAdded = DateTime.Now.AddMonths(-11),
                     DateFinished = null

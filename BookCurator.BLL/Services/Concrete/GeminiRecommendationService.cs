@@ -59,16 +59,22 @@ namespace BookCurator.BLL.Services.Concrete
 
         private static string BuildPrompt(IEnumerable<MediaSummary> items, string? mood)
         {
-            var itemList = string.Join(", ", items.Select(i =>
-                $"{i.Title}{(string.IsNullOrEmpty(i.Creator) ? "" : $" by {i.Creator}")} [{i.MediaType}, {i.Genre}, {i.Status}{(i.Rating.HasValue ? $", rated {i.Rating}/5" : "")}]"));
+            var itemDescriptions = items.Select(i =>
+            {
+                var creatorPart = string.IsNullOrEmpty(i.Creator) ? "" : $" by {i.Creator}";
+                var ratingPart = i.Rating.HasValue ? $", which I rated {i.Rating}/5" : "";
+                return $"the {i.MediaType.ToLower()} \"{i.Title}\"{creatorPart} ({i.Genre}, {i.Status}){ratingPart}";
+            });
 
-            var moodPart = string.IsNullOrWhiteSpace(mood) ? "" : $" I'm in the mood for something like: {mood}.";
+            var itemList = string.Join("; ", itemDescriptions);
+            var moodPart = string.IsNullOrWhiteSpace(mood) ? "" : $" I'm currently in the mood for something like: {mood}.";
 
-            return $"Based on this media history (books, movies, and TV shows): {itemList}.{moodPart} " +
-                   $"Recommend one book, movie, or TV show I haven't consumed yet, in 2-3 sentences, " +
-                   $"explaining why it fits my taste across these different media types.";
+            return $"Here is my media history: {itemList}.{moodPart} " +
+                   "Recommend one book, movie, or TV show I haven't consumed yet. " +
+                   "Respond in natural, conversational prose only — 2-3 sentences. " +
+                   "Do NOT include bracket notation, labels, or tags like [Movie, Sci-Fi, ToWatch] in your answer. " +
+                   "Just mention the title and creator naturally, and explain why it fits my taste.";
         }
-
 
 
 
