@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Dockerfile" />
+  </Folder>
   <Project Path="BookCurator.BLL/BookCurator.BLL.csproj" Id="0630f0e1-f96b-4b3b-957f-a318bd4115d5" />
   <Project Path="BookCurator.DAL/BookCurator.DAL.csproj" />
   <Project Path="BookCurator.MVC/BookCurator.MVC.csproj" />

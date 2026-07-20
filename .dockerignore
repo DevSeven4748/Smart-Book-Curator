@@ -1,0 +1,21 @@
+# Build artifacts
+**/bin/
+**/obj/
+
+# Git
+.git/
+.gitignore
+
+# IDE files
+.vs/
+.vscode/
+*.user
+
+# Database files (don't ship your local dev data into the image)
+*.db
+*.db-shm
+*.db-wal
+
+# Docker files themselves don't need to be in the build context
+Dockerfile
+.dockerignore
