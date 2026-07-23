@@ -3,6 +3,7 @@ using BookCurator.BLL.Services.Abstract;
 using BookCurator.MVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
+[Route("[controller]")]
 public class RecommendationController(
     IRecommendationService recService,
     IBookService bookService,
