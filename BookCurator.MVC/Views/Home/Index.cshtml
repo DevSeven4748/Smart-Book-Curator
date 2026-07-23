@@ -1,8 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model BookCurator.MVC.Models.ViewModels.DashboardViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Smart Media Curator</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>Your Media Library</h2>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Model.BookCount</h5>
+                <p class="card-text">Books</p>
+                <a asp-controller="Books" asp-action="Index" class="btn btn-outline-primary btn-sm">View</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Model.MovieCount</h5>
+                <p class="card-text">Movies</p>
+                <a asp-controller="Movies" asp-action="Index" class="btn btn-outline-primary btn-sm">View</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">@Model.TvShowCount</h5>
+                <p class="card-text">TV Shows</p>
+                <a asp-controller="TvShows" asp-action="Index" class="btn btn-outline-primary btn-sm">View</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<h4>Recently Added</h4>
+<table class="table">
+    <thead><tr><th>Type</th><th>Title</th><th>Status</th><th>Added</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model.RecentItems)
+        {
+            <tr>
+                <td><span class="badge bg-secondary">@item.MediaType</span></td>
+                <td>@item.Title</td>
+                <td>@item.Status</td>
+                <td>@item.DateAdded.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Recommendation" asp-action="Index" class="btn btn-primary mt-3">Get a Recommendation</a>
