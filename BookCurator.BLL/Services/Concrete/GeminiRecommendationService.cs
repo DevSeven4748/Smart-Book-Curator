@@ -51,8 +51,6 @@ namespace BookCurator.BLL.Services.Concrete
                     await Task.Delay(1000 * attempt); // simple backoff: 1s, then 2s
                     continue;
                 }
-                var errorBody = await httpResponse.Content.ReadAsStringAsync();
-                Console.WriteLine($"[Gemini error {(int)httpResponse.StatusCode}]: {errorBody}");
 
                 return $"Recommendation service is temporarily unavailable ({(int)httpResponse.StatusCode}). Please try again shortly."; //return error for each attempt
             }
